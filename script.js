@@ -1,3 +1,17 @@
+function startGame() {
+  if (
+    typeof DeviceOrientationEvent !== "undefined" &&
+    typeof DeviceOrientationEvent.requestPermission === "function"
+  ) {
+    DeviceOrientationEvent.requestPermission()
+      .then(response => {
+        console.log("Motion permission:", response);
+      })
+      .catch(console.error);
+  }
+
+  // rest of your existing startGame code below
+}
 const words = [
   "muddled",
   "nexus",
